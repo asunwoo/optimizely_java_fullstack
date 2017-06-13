@@ -1,0 +1,48 @@
+{
+  "version": "2",
+  "projectId": "8410977336",
+  "experiments": [
+    {
+      "status": "Running",
+      "audienceIds": [],
+      "variations": [
+        {
+          "id": "8426432849",
+          "key": "treatment1"
+        },
+        {
+          "id": "8423302614",
+          "key": "treatment2"
+        }
+      ],
+      "id": "8429140525",
+      "key": "capital_one",
+      "layerId": "8420906043",
+      "trafficAllocation": [
+        {
+          "entityId": "8426432849",
+          "endOfRange": 5000
+        },
+        {
+          "entityId": "8423302614",
+          "endOfRange": 10000
+        }
+      ],
+      "forcedVariations": {}
+    }
+  ],
+  "audiences": [],
+  "groups": [],
+  "attributes": [],
+  "revision": "4",
+  "events": [
+    {
+      "experimentIds": [
+        "8429140525"
+      ],
+      "id": "8428250113",
+      "key": "success_event"
+    }
+  ],
+  "accountId": "8367000120"
+}
