@@ -157,9 +157,9 @@ public class CommandLine {
         //NOTE: the variations are hard coded to an existing experiment.
         if (variation != null) {
             if (variation.is("treatment1")) {
-                variationText = "You're in user variation 1";
+                variationText = userId + " is in user variation 1";
             } else if (variation.is("treatment2")) {
-                variationText = "You're in user variation 2";
+                variationText = userId + " is in user variation 2";
             }
         } else {
             variationText = "You are not in the experiment audience";
@@ -212,10 +212,11 @@ public class CommandLine {
             response = scanner.next();
             String variation = clExperiment.getVariationResponse(response);
 
-            System.out.println(response + " is in variation: " + variation);
+            System.out.println(variation);
 
             String event = clExperiment.trackUser(response);
             System.out.println(event);
+            System.out.println("");
         }
     }
 
