@@ -155,7 +155,7 @@ public class CommandLine {
         attributes.put("DEVICE", "iPhone");
         attributes.put("AD_SOURCE", "my_campaign");
 
-        Variation variation = this.optimizelyClient.activate("capital_one", userId);
+        Variation variation = this.optimizelyClient.activate("capital_one", userId, attributes);
 
         //Conditionals to determine which variation the user has been set to
         //NOTE: the variations are hard coded to an existing experiment.
