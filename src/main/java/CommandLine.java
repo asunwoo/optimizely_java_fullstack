@@ -15,13 +15,13 @@ import java.io.IOException;
 import java.io.BufferedReader;
 
 import java.util.Scanner;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.stream.Stream;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
-import java.nio.charset.StandardCharsets;
 
 import java.util.Random;
 
@@ -151,6 +151,10 @@ public class CommandLine {
     public String getVariationResponse(String userId){
         String variationText = "Not Evaluated";
 
+        Map<String, String> attributes = new HashMap<String, String>();
+        attributes.put("DEVICE", "iPhone");
+        attributes.put("AD_SOURCE", "my_campaign");
+
         Variation variation = this.optimizelyClient.activate("capital_one", userId);
 
         //Conditionals to determine which variation the user has been set to
@@ -181,7 +185,7 @@ public class CommandLine {
         int randomInt = this.randomNumbers.nextInt() % 2;
 
         if (randomInt == 0) {
-            this.optimizelyClient.track("success_metric", userId);
+            this.optimizelyClient.track("success_event", userId);
             eventText = userId + " had an event!";
         } else if (randomInt == 1) {
             eventText = userId + " did not have an event";
